@@ -74,7 +74,7 @@ env:
 
 jobs:
   Compile:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     steps:
 
@@ -196,7 +196,7 @@ jobs:
         cd openwrt
         ./scripts/feeds update -a
         ./scripts/feeds install -a
-       # make package/feeds/packages/gn/clean  #清理 gn 旧编译缓存（关键！避免残留文件影响新构建） 新增
+     
 
     - name: Accelerate
       if: env.CACHE_ACCELERATE == 'true'
