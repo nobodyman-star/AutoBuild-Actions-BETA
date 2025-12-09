@@ -128,7 +128,7 @@ CONFIG_PACKAGE_luci-app-zerotier=y
 CONFIG_PACKAGE_luci-app-oaf=y
 CONFIG_PACKAGE_luci-app-poweroffdevice=y
 CONFIG_PACKAGE_luci-app-netspeedtest=y
-CONFIG_PACKAGE_luci-app-istore=y
+CONFIG_PACKAGE_luci-app-store=y
 CONFIG_PACKAGE_luci-app-kucat-config=y
 
 ##################################################hellword
