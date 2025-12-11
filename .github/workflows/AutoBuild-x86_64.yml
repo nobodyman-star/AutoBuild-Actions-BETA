@@ -242,6 +242,8 @@ jobs:
         cp $GITHUB_WORKSPACE/Configs/$CONFIG_FILE .config
         source $GITHUB_WORKSPACE/Scripts/AutoBuild_DiyScript.sh
         source $GITHUB_WORKSPACE/Scripts/AutoBuild_Function.sh
+        ./scripts/feeds update -a
+        ./scripts/feeds install -a
         make defconfig
         Firmware_Diy_Start
         rm -f .config && cp $GITHUB_WORKSPACE/Configs/$CONFIG_FILE .config
