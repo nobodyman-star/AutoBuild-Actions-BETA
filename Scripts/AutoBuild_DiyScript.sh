@@ -214,8 +214,42 @@ EOF
 	case "${TARGET_PROFILE}" in
 	x86_64)
 		Copy ${CustomFiles}/Depends/cpuset ${BASE_FILES}/bin
-		ReleaseDL https://api.github.com/repos/nxtrace/NTrace-core/releases/latest nexttrace_linux_amd64 ${BASE_FILES}/bin nexttrace
+		#ReleaseDL https://api.github.com/repos/nxtrace/NTrace-core/releases/latest nexttrace_linux_amd64 ${BASE_FILES}/bin nexttrace
+# 替换后的固定下载URL（v1.6.0版本）
+DOWNLOAD_URL="https://github.com/nxtrace/NTrace-core/releases/download/v1.5.0/nexttrace_linux_amd64"
 
+# 目标目录（和原逻辑一致）
+TARGET_DIR="${BASE_FILES}/bin"
+# 最终文件名（和原逻辑一致，重命名为nexttrace）
+TARGET_FILE="${TARGET_DIR}/nexttrace"
+
+# 1. 确保目标目录存在（不存在则创建）
+mkdir -p "${TARGET_DIR}"
+
+# 2. 下载文件（curl/wget二选一，curl更通用）
+# 用curl下载：-L 处理重定向，-o 指定输出文件
+curl -L -o "${TARGET_FILE}" "${DOWNLOAD_URL}"
+
+# （可选）如果系统只有wget，替换上面的curl为这行：
+# wget -q -O "${TARGET_FILE}" "${DOWNLOAD_URL}"
+
+# 3. 添加可执行权限（和原ReleaseDL逻辑一致）
+chmod +x "${TARGET_FILE}"
+
+echo "下载完成：${TARGET_FILE}"
+
+
+
+
+
+
+
+
+
+
+
+
+ 
 		hysteria_version="2.6.1"
 		wstunnel_version="9.2.3"
 		wget --quiet --no-check-certificate -P /tmp \
