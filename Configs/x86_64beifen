@@ -131,6 +131,7 @@ CONFIG_PACKAGE_luci-app-poweroffdevice=y
 CONFIG_PACKAGE_luci-app-netspeedtest=y
 CONFIG_PACKAGE_luci-app-store=y
 CONFIG_PACKAGE_luci-app-kucat-config=y
+CONFIG_PACKAGE_luci-app-lucky=y
 
 ##################################################hellword
 CONFIG_PACKAGE_luci-app-ssr-plus=y
