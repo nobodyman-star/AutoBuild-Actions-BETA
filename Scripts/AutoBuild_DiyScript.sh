@@ -81,6 +81,7 @@ Firmware_Diy() {
 	       echo "src-git kucat  https://github.com/sirpdboy/luci-theme-kucat.git" >>  feeds.conf.default
 		   echo "src-git kucatconfig  https://github.com/sirpdboy/luci-app-kucat-config.git" >>  feeds.conf.default
 		   echo "src-git helloworld https://github.com/fw876/helloworld.git" >>  feeds.conf.default
+		   echo "src-git lucky  https://github.com/sirpdboy/luci-app-lucky.git" >>  feeds.conf.default
 	   # Uncomment a feed source （for lede）
        #   sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 	   #   sed -i 's/openwrt-23.05/openwrt-24.10/g'  feeds.conf.default
