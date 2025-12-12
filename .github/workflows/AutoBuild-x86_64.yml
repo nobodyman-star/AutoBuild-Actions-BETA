@@ -254,6 +254,14 @@ jobs:
     - name: Pre-download Libraries
       run: |
         cd openwrt
+          echo "src-git OpenAppFilter  https://github.com/destan19/OpenAppFilter" >>  feeds.conf.default 
+          echo "src-git poweroffdevice  https://github.com/sirpdboy/luci-app-poweroffdevice" >>  feeds.conf.default  
+          echo "src-git netspeedtest  https://github.com/sirpdboy/netspeedtest" >>  feeds.conf.default
+          echo "src-git istore  https://github.com/linkease/istore.git" >>  feeds.conf.default
+          echo "src-git kucat  https://github.com/sirpdboy/luci-theme-kucat.git" >>  feeds.conf.default
+          echo "src-git kucatconfig  https://github.com/sirpdboy/luci-app-kucat-config.git" >>  feeds.conf.default
+          echo "src-git helloworld https://github.com/fw876/helloworld.git" >>  feeds.conf.default
+          echo "src-git lucky  https://github.com/sirpdboy/luci-app-lucky.git" >>  feeds.conf.default
         ./scripts/feeds update -a
         ./scripts/feeds install -a
         make defconfig
